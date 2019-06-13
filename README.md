@@ -1,10 +1,11 @@
 # Bulma Customize
-> build custom builds of bulma framework.
 
 [![Build Status](https://img.shields.io/travis/mobihack/bulma-customize/master.svg?label=Build%20Status)](https://travis-ci.org/mobihack/bulma-customize)
 [![dependencies Status](https://img.shields.io/david/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize)
 [![devDependencies Status](https://img.shields.io/david/dev/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize?type=dev)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+
+> build custom versions of bulma framework.
 
 A simple customizer which allows you to build a custom version of [Bulma](https://bulma.io/). Use browser to create the specified css file which will be outputted as a zip package.
 
@@ -45,7 +46,7 @@ Development Server:
 npm run dev
 ```
 
-Testing (standardjs,html-validator):
+Testing (standardjs,html-validator,etc...):
 ```sh
 npm run test
 ```
@@ -59,7 +60,7 @@ To contribute:
 1. Fork it (<https://github.com/mobihack/bulma-customize/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3.  - Edit files in `src/`
-    - Commit and open a pull request
+    - Use [Development Server](#development-setup) to check changes.
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
@@ -75,7 +76,7 @@ Our production branch is the `gh-pages` branch which can be seen on <https://mob
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Donation
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
