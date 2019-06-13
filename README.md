@@ -1,20 +1,54 @@
-# bs-customizer
+# Bulma Customize
+> build custom builds of bulma framework.
 
 [![Build Status](https://img.shields.io/travis/mobihack/bulma-customize/master.svg?label=Build%20Status)](https://travis-ci.org/mobihack/bulma-customize)
 [![dependencies Status](https://img.shields.io/david/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize)
 [![devDependencies Status](https://img.shields.io/david/dev/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize?type=dev)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 
-A simple customizer which allows you to build a custom version of [Bulma](https://bulma.i/).
+A simple customizer which allows you to build a custom version of [Bulma](https://bulma.io/). Use browser to create the specified css file which will be outputted as a zip package.
 
 Features:
 
-- Select which plugins you want to use
-- Build a custom Bootstrap CSS version
-- Choose to include Popper.js or not
+- Select which components you want to use
+- Build a custom Bulma CSS version
 - Minify your custom version
 
 You can use it [here](https://mobihack.github.io/bulma-customize/).
+
+## Disclaimer
+
+This project was forked from [Johann-S/bs-customizer](https://github.com/Johann-S/bs-customizer) and necessary changes where done to build custom versions of Bulma. If you can, do support [Johann-S](https://github.com/Johann-S/) as he had laid most of the base setup for the project.
+
+## Usage example
+
+Use these commands to generate bundled files and deploy files to github pages.
+
+Build production files:
+
+```sh
+npm run prod
+```
+
+Deploy production files to gh-pages branch:
+
+```sh
+npm run deploy
+```
+
+## Development setup
+
+The development server includes live-reload and other features needed for easier coding.
+
+Development Server:
+```sh
+npm run dev
+```
+
+Testing (standardjs,html-validator):
+```sh
+npm run test
+```
 
 ## Contributing
 
@@ -22,9 +56,14 @@ You're more than welcome to contribute to our project :heart:
 
 To contribute:
 
-- Edit files in `src/`
-- Test your changes by running `npm run dev`
-- Commit and open a pull request
+1. Fork it (<https://github.com/mobihack/bulma-customize/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3.  - Edit files in `src/`
+    - Commit and open a pull request
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
 
 Thank you!
 
@@ -34,10 +73,12 @@ If you want to try out our latest changes (pushed in our `master` branch) you ca
 
 Our production branch is the `gh-pages` branch which can be seen on <https://mobihack.github.io/bulma-customize/>.
 
-## Support me
-
-If you want to thank me, you can support me.
-
 ## License
 
-[MIT](./LICENSE)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Donation
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EKLDUBPHHLRE4&source=url)
+
