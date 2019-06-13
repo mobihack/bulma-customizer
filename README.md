@@ -1,11 +1,11 @@
 # bs-customizer
 
-[![Build Status](https://img.shields.io/travis/Johann-S/bs-customizer/master.svg?label=Build%20Status)](https://travis-ci.org/Johann-S/bs-customizer)
-[![dependencies Status](https://img.shields.io/david/Johann-S/bs-customizer.svg)](https://david-dm.org/Johann-S/bs-customizer)
-[![devDependencies Status](https://img.shields.io/david/dev/Johann-S/bs-customizer.svg)](https://david-dm.org/Johann-S/bs-customizer?type=dev)
+[![Build Status](https://img.shields.io/travis/mobihack/bulma-customize/master.svg?label=Build%20Status)](https://travis-ci.org/mobihack/bulma-customize)
+[![dependencies Status](https://img.shields.io/david/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize)
+[![devDependencies Status](https://img.shields.io/david/dev/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize?type=dev)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 
-A simple customizer which allows you to build a custom version of [Bootstrap](https://getbootstrap.com/) v4
+A simple customizer which allows you to build a custom version of [Bulma](https://bulma.i/).
 
 Features:
 
@@ -14,7 +14,7 @@ Features:
 - Choose to include Popper.js or not
 - Minify your custom version
 
-You can use it [here](https://johann-s.github.io/bs-customizer/).
+You can use it [here](https://mobihack.github.io/bulma-customize/).
 
 ## Contributing
 
@@ -30,14 +30,14 @@ Thank you!
 
 ## Testing our latest changes
 
-If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bs-customizer.netlify.com/>.
+If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bulma-customize.netlify.com/>. SOON
 
-Our production branch is the `gh-pages` branch which can be seen on <https://johann-s.github.io/bs-customizer/>.
+Our production branch is the `gh-pages` branch which can be seen on <https://mobihack.github.io/bulma-customize/>.
 
 ## Support me
 
-If you want to thank me, you can support me and become my [Patron](https://www.patreon.com/jservoire).
+If you want to thank me, you can support me.
 
 ## License
 
-[MIT](https://github.com/Johann-S/bs-customizer/blob/master/LICENSE)
+[MIT](./LICENSE)

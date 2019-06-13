@@ -1,9 +1,7 @@
-const bootstrapVersion = '4.2.1'
-const bsJsCDN = `https://unpkg.com/bootstrap@${bootstrapVersion}/js/dist/`
-const bsScssCDN = `https://unpkg.com/bootstrap@${bootstrapVersion}/scss/`
+const bulmaVersion = '0.7.5'
+const bsScssCDN = `https://unpkg.com/bulma@${bulmaVersion}/sass/`
 
 module.exports = Object.freeze({
-  bootstrapVersion,
-  bsJsCDN,
+  bulmaVersion,
   bsScssCDN
 })

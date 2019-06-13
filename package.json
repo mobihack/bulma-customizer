@@ -1,7 +1,7 @@
 {
-  "name": "bs-customizer",
+  "name": "bulma-customize",
   "version": "1.0.0",
-  "description": "Create custom Bootstrap 4.x builds",
+  "description": "Create custom Bulma builds",
   "private": true,
   "scripts": {
     "deploy": "gh-pages --dist ./ --src \"{index.html,dist/**}\"",
@@ -13,17 +13,16 @@
   },
   "keywords": [
     "customizer",
-    "bootstrap",
-    "bootstrap4",
+    "custom",
+    "bulma",
     "javascript"
   ],
-  "author": "Johann-S <johann.servoire@gmail.com>",
+  "author": "mobihack <mobihack.mee@gmail.com> and Johann-S <johann.servoire@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^9.3.1",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.2.1",
-    "jquery": "^3.3.1",
+    "axios": "^0.19.0",
+    "bulma": "^0.7.5",
     "jszip": "^3.1.5",
     "postcss": "^7.0.6",
     "sass.js": "^0.10.13",
@@ -52,7 +51,7 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
+    "webpack-dev-server": "^3.7.1",
     "write-file-webpack-plugin": "^4.5.0"
   },
   "standard": {

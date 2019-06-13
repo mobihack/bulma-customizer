@@ -1,45 +1,83 @@
-import $ from 'jquery'
 import Sass from 'sass.js/dist/sass'
 
-import { formatList, ucfirst, getSassWorkerPath, supportedBrowser } from './util'
+import { formatList, getSassWorkerPath, supportedBrowser } from './util'
 import { createModal, showModal, updateLink } from './dialog-loader'
 import { initToggler } from './toggler'
-import { bootstrapVersion } from './config'
+import { bulmaVersion } from './config'
 
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bulma/css/bulma.css'
 import '../css/main.css'
 
-$(() => {
+window.onload = () => {
   if (!supportedBrowser()) {
-    document.querySelector('.js-alert-browser').classList.remove('d-none')
+    document.querySelector('.js-alert-browser').classList.remove('is-hidden')
     return
   }
-
-  const { checkboxPopper, chkCSS, chkMinify } = initToggler()
+  
+  const { chkMinify } = initToggler()
   Sass.setWorkerUrl(getSassWorkerPath())
   createModal()
 
   const formEl = document.querySelector('.js-form-customize')
-
+  
   formEl.addEventListener('submit', (event) => {
     event.preventDefault()
-
-    const formData = $(formEl).serializeArray()
-    if (formData.length === 0) {
-      return
-    }
-
+    
+    const formData = serializeArray(formEl)
+    formData.unshift({"name":"initial_variables","value":"on"},
+     {"name":"functions","value":"on"},
+     {"name":"derived_variables","value":"on"},
+     {"name":"animations","value":"on"},
+     {"name":"mixins","value":"on"},
+     {"name":"controls","value":"on"});
+    
     showModal(() => {
       import(/* webpackChunkName: "build" */ './build')
         .then(({ build }) => {
-          const fileName = `bootstrap.${bootstrapVersion}.custom.zip`
-          const pluginList = formatList(formData.map((value) => ucfirst(value.name)))
-
-          build(pluginList, checkboxPopper.checked, chkMinify.checked, chkCSS.checked)
+          const fileName = `bulma.${bulmaVersion}.custom.zip`
+          const pluginList = formatList(formData.map((value) => value.name))
+          build(pluginList, chkMinify.checked)
             .then(url => {
               updateLink(fileName, url)
             })
         })
     })
   })
-})
+}
+
+var serializeArray = function (form) {
+
+	// Setup our serialized data
+	var serialized = [];
+
+	// Loop through each field in the form
+	for (var i = 0; i < form.elements.length; i++) {
+
+		var field = form.elements[i];
+
+		// Don't serialize fields without a name, submits, buttons, file and reset inputs, and disabled fields
+		if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') continue;
+
+		// If a multi-select, get all selections
+		if (field.type === 'select-multiple') {
+			for (var n = 0; n < field.options.length; n++) {
+				if (!field.options[n].selected) continue;
+				serialized.push({
+					name: field.name,
+					value: field.options[n].value
+				});
+			}
+		}
+
+		// Convert field data to a query string
+		else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+			serialized.push({
+				name: field.name,
+				value: field.value
+			});
+		}
+	}
+
+	return serialized;
+
+};

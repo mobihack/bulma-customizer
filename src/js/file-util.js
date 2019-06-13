@@ -20,31 +20,16 @@ const concatFileData = (files) => {
   return content
 }
 
-const createJsFileContent = (jsFiles, minify) => {
-  let content = concatFileData(jsFiles)
-
-  if (minify) {
-    const minifyResult = uglify.minify(content, uglifyConfig)
-
-    if (minifyResult.error) {
-      throw new Error('Unable to minify')
-    }
-
-    content = minifyResult.code
-  }
-
-  return content
-}
-
 const createCssFileContent = scssFiles => {
   return concatFileData(scssFiles)
 }
 
 const generateLink = fileContent => {
+  
   const downloadUrl = URL.createObjectURL(fileContent, {
     type: 'application/zip'
   })
-
+  console.log(downloadUrl)
   return downloadUrl
 }
 

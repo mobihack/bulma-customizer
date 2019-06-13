@@ -1,31 +1,24 @@
-.no-underline {
-  text-decoration: none !important;
+.js-alert-browser{
+  margin-top: 1.5rem;
+}
+section.group{
+  margin-top: 1.5rem;
 }
 
-.icon {
-  max-width: 25px;
+.submit-section{
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+.submit-section svg{
+  margin-right: 0.5rem;
 }
 
-.icon-build {
-  max-width: 20px;
+.is-active .modal-close-button{
+  z-index: 100;
 }
-
-.loader {
-  display: inline-block;
-  font-size: initial;
-  box-sizing: border-box;
+.js-loading-status{
+  margin-top: 1rem;
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(359deg);
-  }
-}
-
-.spin {
-  animation: spin 2s linear infinite;
+.js-dialog-loader .modal-content{
+  width: 50%;
 }

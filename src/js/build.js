@@ -5,21 +5,20 @@ import CleanCSS from './lib/clean-css'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
-import { bootstrapVersion } from './config'
-import { jsPlugins, scssPlugins } from './plugins'
-import { createJsFileContent, generateLink } from './file-util'
+import { bulmaVersion } from './config'
+import { scssPlugins } from './plugins'
+import { generateLink } from './file-util'
 import { formatScssList, uniqArray } from './util'
 
 const year = new Date().getFullYear()
 const header = `/*!
- * Bootstrap v${bootstrapVersion} custom (https://getbootstrap.com/)
- * Built with https://johann-s.github.io/bs-customizer/
- * Copyright 2011-${year} The Bootstrap Authors
+ * Bulma v${bulmaVersion} custom (https://bulma.io/)
+ * Built with https://johann-s.github.io/bs-customizer/CHANGE
+ * Copyright 2011-${year} The Bulma Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 `
 
-const popperCDN = 'https://unpkg.com/popper.js/dist/umd/popper.js'
 const autoPrefixerConfig = {
   cascade: false,
   browsers: [
@@ -48,18 +47,6 @@ const configSass = {
   style: Sass.style.expanded
 }
 
-const buildJavaScript = (files, minify) => {
-  return new Promise((resolve, reject) => {
-    axios.all(files)
-      .then(filesData => {
-        resolve(createJsFileContent(filesData, minify))
-      })
-      .catch(() => {
-        reject(new Error('An error occured during building JS files'))
-      })
-  })
-}
-
 const buildScss = (files, minify) => {
   return new Promise((resolve, reject) => {
     axios.all(files)
@@ -72,21 +59,12 @@ const buildScss = (files, minify) => {
           const splittedString = result.config.url.split('/')
           const fileName = splittedString[splittedString.length - 1]
 
-          if (splittedString.indexOf('mixins') !== -1) {
-            const path = `mixins/${fileName}`
-            resultFileOrder.push(path)
-            sass.writeFile(path, result.data)
-          } else if (splittedString.indexOf('utilities') !== -1) {
-            const path = `utilities/${fileName}`
-            resultFileOrder.push(path)
-            sass.writeFile(path, result.data)
-          } else {
-            resultFileOrder.push(fileName)
-            sass.writeFile(fileName, result.data)
-          }
+
+          resultFileOrder.push(fileName)
+          sass.writeFile(fileName, result.data)
         })
 
-        const result = formatScssList(resultFileOrder)
+        const result = resultFileOrder
           .map(file => {
             if (file.charAt(0) === '_') {
               file = file.substr(1)
@@ -94,9 +72,11 @@ const buildScss = (files, minify) => {
 
             const splitFile = file.split('.scss')
             return `@import "${splitFile[0]}";`
+
           })
 
         sass.compile(result.join(' '), result => {
+
           if (result.status === 0) {
             let cssContent = result.text
 
@@ -121,51 +101,26 @@ const buildScss = (files, minify) => {
   })
 }
 
-const build = (pluginList, addPopper, minify, includeCSS) => {
-  const fileName = `bootstrap.custom${minify ? '.min' : ''}`
+const build = (pluginList, minify) => {
+
+  const fileName = `bulma.custom${minify ? '.min' : ''}`
   const zip = new JSZip()
 
-  let listJsRequest = []
   let listScssRequest = []
 
   pluginList.forEach(plugin => {
-    if (jsPlugins[plugin]) {
-      listJsRequest = listJsRequest.concat(jsPlugins[plugin].js)
-
-      if (includeCSS) {
-        listScssRequest = listScssRequest.concat(jsPlugins[plugin].scss)
-      }
-    } else {
-      listScssRequest = listScssRequest.concat(scssPlugins[plugin])
-    }
+    listScssRequest = listScssRequest.concat(scssPlugins[plugin])
   })
 
-  listJsRequest = uniqArray(listJsRequest)
-    .map(url => axios.get(url))
-
-  if (addPopper) {
-    listJsRequest.unshift(axios.get(popperCDN))
-  }
 
   if (listScssRequest.length > 0) {
     // Add reboot by default
-    listScssRequest = listScssRequest.concat(scssPlugins.Reboot)
+    //listScssRequest = listScssRequest.concat(scssPlugins.Reboot)
     listScssRequest = uniqArray(listScssRequest).map(url => axios.get(url))
   }
 
   return new Promise(resolve => {
-    buildJavaScript(listJsRequest, minify)
-      .then(jsFileContent => {
-        if (jsFileContent.length > 0) {
-          zip.file(`${fileName}.js`, `${header}${jsFileContent}`)
-        }
-
-        if (listScssRequest.length > 0) {
-          return buildScss(listScssRequest, minify)
-        }
-
-        return Promise.resolve('')
-      })
+    buildScss(listScssRequest, minify)
       .then(cssContent => {
         if (cssContent.length > 0) {
           zip.file(`${fileName}.css`, `${header}${cssContent}`)
@@ -176,6 +131,14 @@ const build = (pluginList, addPopper, minify, includeCSS) => {
             resolve(generateLink(content))
           })
       })
+    /*buildJavaScript([], minify)
+      .then(jsFileContent => {
+        if (listScssRequest.length > 0) {
+          return buildScss(listScssRequest, minify)
+        }
+
+        return Promise.resolve('')
+      })*/
   })
 }
 

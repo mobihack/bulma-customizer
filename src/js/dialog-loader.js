@@ -1,6 +1,3 @@
-import $ from 'jquery'
-import 'bootstrap/js/dist/modal'
-
 let $modal
 let $loader
 let $generatedLink
@@ -8,25 +5,18 @@ let $loadingStatus
 let $modalHeader
 
 const dialogClass = 'js-dialog-loader'
+
 const template = `
-<div class="modal fade ${dialogClass}" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header d-none js-modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="modal ${dialogClass}">
+  <div class="modal-background"></div>
+    <div class="modal-content box has-text-centered">
+      <div class="js-loader">
+        <progress class="progress is-small is-primary" max="100">loading</progress>
       </div>
-      <div class="modal-body text-center">
-        <div class="js-loader">
-          <div class="loader spin">
-            <svg width="32" height="32" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 7h4v2H0V7zm12 0h4v2h-4V7zm-5 5h2v4H7v-4zM7 0h2v4H7V0zM1.6 3L3 1.6 6 4.5 4.5 5.9 1.6 3zm12.8 10l-1.5 1.4-2.8-2.9 1.4-1.4 2.9 2.8zM3 14.3l-1.5-1.5 2.9-2.8 1.4 1.4L3 14.4zm8.4-8.5l-1.4-1.4L13 1.6 14.4 3 11.5 6z"/>
-            </svg>
-          </div>
-        </div>
-        <p class="js-loading-status mt-3 mb-0"></p>
-        <a class="js-generated-link btn btn-primary d-none">
+      <p class="js-loading-status"></p>
+      <div class="has-text-centered js-generated-link is-hidden">
+        <br>
+        <a class="button is-primary">
           <svg class="icon" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
             <path d="M9 22 C0 23 1 12 9 13 6 2 23 2 22 10 32 7 32 23 23 22 M11 26 L16 30 21 26 M16 16 L16 30" />
           </svg>
@@ -34,50 +24,63 @@ const template = `
         </a>
       </div>
     </div>
-  </div>
-</div>
-`
+    <button class="modal-close is-large modal-close-button is-hidden" aria-label="close"></button>
+  </div>`
+  
 
 const createModal = () => {
-  $(document.body).append(template)
-  $modal = $(`.${dialogClass}`)
-  $loader = $('.js-loader')
-  $generatedLink = $('.js-generated-link')
-  $loadingStatus = $('.js-loading-status')
-  $modalHeader = $modal.find('.js-modal-header')
+  var modal = document.createElement("div")
+  modal.innerHTML = template
+  document.body.appendChild(modal)
+  $modal = document.querySelector(`.${dialogClass}`)
+  $loader = document.querySelector('.js-loader')
+  $generatedLink = document.querySelector('.js-generated-link')
+  $loadingStatus = document.querySelector('.js-loading-status')
+  $modalHeader = $modal.querySelector('.modal-close-button')
 
-  $modal.on('hidden.bs.modal', () => {
-    $loadingStatus.text('')
 
-    $modalHeader.addClass('d-none')
-    URL.revokeObjectURL($generatedLink.attr('href'))
-    $generatedLink.addClass('d-none')
-      .attr('href', '')
-
-    $loader.removeClass('d-none')
-    $loadingStatus.removeClass('d-none')
+  $modalHeader.addEventListener('click', ()=>{
+    hideModal()
   })
 }
-
+const hideModalEsc = (e) => {
+  var code = e.keyCode || e.which
+  if (code == 27){
+    hideModal()
+  }
+}
 const showModal = (callback) => {
-  $loadingStatus.text('Building your custom Bootstrap...')
-  $modal
-    .one('shown.bs.modal', () => callback())
-    .modal('show')
+  $loadingStatus.innerHTML = 'building your custom bulma stylesheet.'
+  $modal.classList.add('is-active')
+  callback()
 }
 
 const updateLink = (fileName, link) => {
-  $generatedLink.attr('href', link)
-    .attr('download', fileName)
-    .removeClass('d-none')
 
-  $modalHeader.removeClass('d-none')
-  $loader.addClass('d-none')
-  $loadingStatus.addClass('d-none')
+  document.addEventListener('keydown', (e) => {
+    hideModalEsc(e)
+  })
+  $generatedLink.querySelector('a.button').setAttribute("href", link)
+  $generatedLink.querySelector('a.button').setAttribute("download", filename)
+  $generatedLink.classList.remove('is-hidden')
+  $modalHeader.classList.remove('is-hidden')
+  $loader.classList.add('is-hidden')
+  //$loadingStatus.classList.add('is-hidden')
+  $loadingStatus.innerHTML='Download <strong>'+fileName+'</strong>'
 }
 
 const hideModal = () => {
-  $modal.modal('hide')
+  document.removeEventListener('keydown', (e) => {
+    hideModalEsc(e)
+  })
+  $modal.classList.remove('is-active')
+  URL.revokeObjectURL($generatedLink.getAttribute('href'))
+  $generatedLink.setAttribute('href', '')
+  $generatedLink.setAttribute('download', '')
+  $generatedLink.classList.add('is-hidden')
+  $modalHeader.classList.add('is-hidden')
+  $loader.classList.remove('is-hidden')
+  $loadingStatus.classList.remove('is-hidden')
 }
 
 export {
