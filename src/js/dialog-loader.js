@@ -26,10 +26,9 @@ const template = `
     </div>
     <button class="modal-close is-large modal-close-button is-hidden" aria-label="close"></button>
   </div>`
-  
 
 const createModal = () => {
-  var modal = document.createElement("div")
+  var modal = document.createElement('div')
   modal.innerHTML = template
   document.body.appendChild(modal)
   $modal = document.querySelector(`.${dialogClass}`)
@@ -38,14 +37,13 @@ const createModal = () => {
   $loadingStatus = document.querySelector('.js-loading-status')
   $modalHeader = $modal.querySelector('.modal-close-button')
 
-
-  $modalHeader.addEventListener('click', ()=>{
+  $modalHeader.addEventListener('click', () => {
     hideModal()
   })
 }
 const hideModalEsc = (e) => {
   var code = e.keyCode || e.which
-  if (code == 27){
+  if (code === 27) {
     hideModal()
   }
 }
@@ -56,17 +54,15 @@ const showModal = (callback) => {
 }
 
 const updateLink = (fileName, link) => {
-
   document.addEventListener('keydown', (e) => {
     hideModalEsc(e)
   })
-  $generatedLink.querySelector('a.button').setAttribute("href", link)
-  $generatedLink.querySelector('a.button').setAttribute("download", fileName)
+  $generatedLink.querySelector('a.button').setAttribute('href', link)
+  $generatedLink.querySelector('a.button').setAttribute('download', fileName)
   $generatedLink.classList.remove('is-hidden')
   $modalHeader.classList.remove('is-hidden')
   $loader.classList.add('is-hidden')
-  //$loadingStatus.classList.add('is-hidden')
-  $loadingStatus.innerHTML='Download <strong>'+fileName+'</strong>'
+  $loadingStatus.innerHTML = 'Download <strong>' + fileName + '</strong>'
 }
 
 const hideModal = () => {

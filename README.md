@@ -30,7 +30,7 @@ Thank you!
 
 ## Testing our latest changes
 
-If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bulma-customize.netlify.com/>. SOON
+If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bulma-customize.netlify.com/>.
 
 Our production branch is the `gh-pages` branch which can be seen on <https://mobihack.github.io/bulma-customize/>.
 

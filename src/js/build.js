@@ -13,9 +13,9 @@ import { uniqArray } from './util'
 const year = new Date().getFullYear()
 const header = `/*!
  * Bulma v${bulmaVersion} custom (https://bulma.io/)
- * Built with https://johann-s.github.io/bs-customizer/CHANGE
+ * Built with https://mobihack.github.io/bulma-customize/
  * Copyright 2011-${year} The Bulma Authors
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/jgthms/bulma/blob/master/LICENSE)
  */
 `
 
@@ -53,44 +53,33 @@ const buildScss = (files, minify) => {
       .then(scssFiles => {
         const sass = new Sass()
         sass.options(configSass)
-
         const resultFileOrder = []
         scssFiles.forEach(result => {
           const splittedString = result.config.url.split('/')
           const fileName = splittedString[splittedString.length - 1]
-
-
           resultFileOrder.push(fileName)
           sass.writeFile(fileName, result.data)
         })
-
         const result = resultFileOrder
           .map(file => {
             if (file.charAt(0) === '_') {
               file = file.substr(1)
             }
-
             const splitFile = file.split('.scss')
             return `@import "${splitFile[0]}";`
-
           })
-
         sass.compile(result.join(' '), result => {
-
           if (result.status === 0) {
             let cssContent = result.text
-
             postcss([
               autoprefixer(autoPrefixerConfig)
             ])
               .process(cssContent, { from: undefined })
               .then(compiled => {
                 cssContent = compiled.css
-
                 if (minify) {
                   cssContent = new CleanCSS(configCleanCSS).minify(cssContent).styles
                 }
-
                 resolve(cssContent)
               })
           } else {
@@ -102,20 +91,17 @@ const buildScss = (files, minify) => {
 }
 
 const build = (pluginList, minify) => {
-
   const fileName = `bulma.custom${minify ? '.min' : ''}`
   const zip = new JSZip()
-
   let listScssRequest = []
 
   pluginList.forEach(plugin => {
     listScssRequest = listScssRequest.concat(scssPlugins[plugin])
   })
 
-
   if (listScssRequest.length > 0) {
     // Add some files by default
-    //listScssRequest = listScssRequest.concat(scssPlugins.Reboot)
+    // listScssRequest = listScssRequest.concat(scssPlugins.Reboot)
     listScssRequest = uniqArray(listScssRequest).map(url => axios.get(url))
   }
 
@@ -125,7 +111,6 @@ const build = (pluginList, minify) => {
         if (cssContent.length > 0) {
           zip.file(`${fileName}.css`, `${header}${cssContent}`)
         }
-
         zip.generateAsync({ type: 'blob' })
           .then(content => {
             resolve(generateLink(content))

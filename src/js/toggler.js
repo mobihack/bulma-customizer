@@ -1,5 +1,3 @@
-let chooseToImportPopper = true
-
 const initToggler = () => {
   const jsGroupList = [].slice.call(document.querySelectorAll('.group'))
 

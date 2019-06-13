@@ -39,7 +39,7 @@ const getSassWorkerPath = () => {
     .indexOf(bsCustomizer)
 
   const bsCustomizerPath = indexPath !== -1 ? `/${bsCustomizer}/` : '/'
-  
+
   return `${origin}${bsCustomizerPath}dist/sass.worker.js`
 }
 

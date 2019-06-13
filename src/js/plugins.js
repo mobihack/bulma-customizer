@@ -1,9 +1,6 @@
-import {  bsScssCDN } from './config'
-
-
+import { bsScssCDN } from './config'
 
 const scssPlugins = {
-  
   /** base */
   minireset: [
     `${bsScssCDN}base/minireset.sass`
@@ -14,7 +11,6 @@ const scssPlugins = {
   helpers: [
     `${bsScssCDN}base/helpers.sass`
   ],
-  
   /** Components */
   breadcrumb: [
     `${bsScssCDN}components/breadcrumb.sass`
@@ -101,22 +97,22 @@ const scssPlugins = {
   checkbox_radio: [
     `${bsScssCDN}form/checkbox-radio.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/tools.sass`
   ],
   file: [
     `${bsScssCDN}form/file.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/tools.sass`
   ],
   input_textarea: [
     `${bsScssCDN}form/input-textarea.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/tools.sass`
   ],
   select: [
     `${bsScssCDN}form/select.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/tools.sass`
   ],
 
   /** grid */
