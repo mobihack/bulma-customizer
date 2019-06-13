@@ -15,7 +15,9 @@ window.onload = () => {
   }
   
   const { chkMinify } = initToggler()
+  
   Sass.setWorkerUrl(getSassWorkerPath())
+  
   createModal()
 
   const formEl = document.querySelector('.js-form-customize')
@@ -24,6 +26,8 @@ window.onload = () => {
     event.preventDefault()
     
     const formData = serializeArray(formEl)
+    
+    /** add required fields by default */
     formData.unshift({"name":"initial_variables","value":"on"},
      {"name":"functions","value":"on"},
      {"name":"derived_variables","value":"on"},

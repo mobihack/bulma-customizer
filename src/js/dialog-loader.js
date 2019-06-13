@@ -61,7 +61,7 @@ const updateLink = (fileName, link) => {
     hideModalEsc(e)
   })
   $generatedLink.querySelector('a.button').setAttribute("href", link)
-  $generatedLink.querySelector('a.button').setAttribute("download", filename)
+  $generatedLink.querySelector('a.button').setAttribute("download", fileName)
   $generatedLink.classList.remove('is-hidden')
   $modalHeader.classList.remove('is-hidden')
   $loader.classList.add('is-hidden')

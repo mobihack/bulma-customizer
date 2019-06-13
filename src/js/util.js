@@ -24,7 +24,7 @@ const formatList = list => {
 const uniqArray = array => array.filter((elem, pos, arr) => arr.indexOf(elem) === pos)
 
 const getSassWorkerPath = () => {
-  const bsCustomizer = 'bs-customizer'
+  const bsCustomizer = 'bulma-customize'
   const location = window.location
   let origin = location.origin
 
@@ -39,7 +39,7 @@ const getSassWorkerPath = () => {
     .indexOf(bsCustomizer)
 
   const bsCustomizerPath = indexPath !== -1 ? `/${bsCustomizer}/` : '/'
-
+  
   return `${origin}${bsCustomizerPath}dist/sass.worker.js`
 }
 

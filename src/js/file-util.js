@@ -29,7 +29,6 @@ const generateLink = fileContent => {
   const downloadUrl = URL.createObjectURL(fileContent, {
     type: 'application/zip'
   })
-  console.log(downloadUrl)
   return downloadUrl
 }
 

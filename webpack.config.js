@@ -12,7 +12,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const CleanCSS = require('clean-css')
 const { bulmaVersion } = require('./src/js/config')
 
-let fileName = 'bs-customizer.min'
+let fileName = 'bulma-customize.min'
 const paths = {
   src: `${path.join(__dirname, 'src/js/')}*.js`,
   index: `${path.join(__dirname, 'src/')}*.html`
@@ -93,7 +93,7 @@ module.exports = (env, args) => {
         template: path.resolve(__dirname, 'src/index.html'),
         filename: path.resolve(__dirname, 'index.html'),
         minify: isProd ? htmlminifierOpts : false,
-        bulmaVersion: bulmaVersion
+        bsVersion: bulmaVersion
       }),
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async'

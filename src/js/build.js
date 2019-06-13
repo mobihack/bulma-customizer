@@ -8,7 +8,7 @@ import autoprefixer from 'autoprefixer'
 import { bulmaVersion } from './config'
 import { scssPlugins } from './plugins'
 import { generateLink } from './file-util'
-import { formatScssList, uniqArray } from './util'
+import { uniqArray } from './util'
 
 const year = new Date().getFullYear()
 const header = `/*!
@@ -114,7 +114,7 @@ const build = (pluginList, minify) => {
 
 
   if (listScssRequest.length > 0) {
-    // Add reboot by default
+    // Add some files by default
     //listScssRequest = listScssRequest.concat(scssPlugins.Reboot)
     listScssRequest = uniqArray(listScssRequest).map(url => axios.get(url))
   }
@@ -131,14 +131,6 @@ const build = (pluginList, minify) => {
             resolve(generateLink(content))
           })
       })
-    /*buildJavaScript([], minify)
-      .then(jsFileContent => {
-        if (listScssRequest.length > 0) {
-          return buildScss(listScssRequest, minify)
-        }
-
-        return Promise.resolve('')
-      })*/
   })
 }
 
