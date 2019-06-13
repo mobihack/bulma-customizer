@@ -5,8 +5,6 @@ import { createModal, showModal, updateLink } from './dialog-loader'
 import { initToggler } from './toggler'
 import { bulmaVersion } from './config'
 
-import { build } from './build'
-
 import 'bulma/css/bulma.css'
 import '../css/main.css'
 
@@ -40,15 +38,19 @@ window.onload = () => {
     )
 
     showModal(() => {
-      const fileName = `bulma.${bulmaVersion}.custom.zip`
-      const pluginList = formatList(formData.map((value) => value.name))
-      build(pluginList, chkMinify.checked)
-        .then(url => {
-          updateLink(fileName, url)
+      import(/* webpackChunkName: "build" */ './build')
+        .then(({ build }) => {
+          const fileName = `bulma.${bulmaVersion}.custom.zip`
+          const pluginList = formatList(formData.map((value) => value.name))
+          build(pluginList, chkMinify.checked)
+            .then(url => {
+              updateLink(fileName, url)
+            })
         })
     })
   })
 }
+
 var serializeArray = function (form) {
   // Setup our serialized data
   var serialized = []

@@ -71,7 +71,7 @@ module.exports = (env, args) => {
   const isProd = args.mode === 'production'
 
   const conf = {
-    entry: ['./src/js/index.js'],
+    entry: './src/js/index.js',
     output: {
       filename: '[name].bundle.js',
       chunkFilename: '[name].bundle.js',
