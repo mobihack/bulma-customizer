@@ -93,7 +93,7 @@ module.exports = (env, args) => {
         template: path.resolve(__dirname, 'src/index.html'),
         filename: path.resolve(__dirname, 'index.html'),
         minify: isProd ? htmlminifierOpts : false,
-        bsVersion: bulmaVersion
+        bulmaVersion: bulmaVersion
       }),
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async'
