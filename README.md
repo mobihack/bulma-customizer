@@ -1,11 +1,12 @@
 # Bulma Customize
 
-![Bulma Customize Repository Splash Image.](https://repository-images.githubusercontent.com/191608084/7deb6080-8ea0-11e9-9414-f42db4d5f7c8)
+![Bulma Customize Repository Splash Image.](https://repository-images.githubusercontent.com/191608084/86e62d00-8eb4-11e9-90e6-b87487a52f29)
 
-[![Build Status](https://img.shields.io/travis/mobihack/bulma-customize/master.svg?label=Build%20Status)](https://travis-ci.org/mobihack/bulma-customize)
-[![dependencies Status](https://img.shields.io/david/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize)
-[![devDependencies Status](https://img.shields.io/david/dev/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize?type=dev)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/) ![GitHub](https://img.shields.io/github/license/mobihack/bulma-customize.svg)
+[![Build Status](https://badgen.net/travis/mobihack/bulma-customize)](https://travis-ci.org/mobihack/bulma-customize)
+[![dependencies Status](https://badgen.net/david/dep/mobihack/bulma-customize)](https://david-dm.org/mobihack/bulma-customize)
+[![devDependencies Status](https://badgen.net/david/dev/mobihack/bulma-customize)](https://david-dm.org/mobihack/bulma-customize?type=dev)
+[![JavaScript Style Guide](https://badgen.net/badge/code%20style/standard/green/)](https://standardjs.com/)
+![Dependabot](https://img.shields.io/badge/Dependabot-active-brightgreen.svg)
 
 > build custom versions of bulma framework.
 
