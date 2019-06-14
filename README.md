@@ -59,6 +59,13 @@ npm run test
 Please view the project to-do list at the projects section.
 > <https://github.com/mobihack/bulma-customize/projects/2>
 
+## Branches
+
+There are currently three branches for this project.
+ - master - Here our main source code is present.
+ - gh-pages - Here the `production` files that was compiled is present.
+ - bs-customize - This branch is used as a merge branch only for upstream pull request.
+
 ## Contributing
 
 You're more than welcome to contribute to our project :heart:
