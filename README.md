@@ -18,7 +18,7 @@ Features:
 - Build a custom Bulma CSS version
 - Minify your custom version
 
-You can use it [here](https://mobihack.github.io/bulma-customize/).
+You can use it here at <https://mobihack.github.io/bulma-customize/>.
 
 ## Disclaimer
 
@@ -80,7 +80,7 @@ Thank you!
 
 If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bulma-customize.netlify.com/>.
 
-Our production branch is the `gh-pages` branch which can be seen on <https://mobihack.github.io/bulma-customize/>.
+Our production branch is the `gh-pages` branch which can be seen at <https://mobihack.github.io/bulma-customize/>.
 
 ## License
 
