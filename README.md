@@ -5,7 +5,7 @@
 [![devDependencies Status](https://img.shields.io/david/dev/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize?type=dev)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/) ![GitHub](https://img.shields.io/github/license/mobihack/bulma-customize.svg)
 
-![Yo](https://repository-images.githubusercontent.com/191608084/7deb6080-8ea0-11e9-9414-f42db4d5f7c8)
+![Bulma Customize Repository Splash Image.](https://repository-images.githubusercontent.com/191608084/7deb6080-8ea0-11e9-9414-f42db4d5f7c8)
 
 > build custom versions of bulma framework.
 
@@ -19,41 +19,41 @@ Features:
 
 You can use it [here](https://mobihack.github.io/bulma-customize/).
 
-## Disclaimer
+## Disclaimer.
 
 This project was forked from [Johann-S/bs-customizer](https://github.com/Johann-S/bs-customizer) and necessary changes where done to build custom versions of Bulma. If you can, do support [Johann-S](https://github.com/Johann-S/) as he had laid most of the base setup for the project.
 
-## Usage example
+## Usage example.
 
 Use these commands to generate bundled files and deploy files to github pages.
 
 Build production files:
 
-```sh
+```
 npm run prod
 ```
 
 Deploy production files to gh-pages branch:
 
-```sh
+```
 npm run deploy
 ```
 
-## Development setup
+## Development Setup.
 
 The development server includes live-reload and other features needed for easier coding.
 
 Development Server:
-```sh
+```
 npm run dev
 ```
 
 Testing (standardjs,html-validator,etc...):
-```sh
+```
 npm run test
 ```
 
-## Contributing
+## Contributing.
 
 You're more than welcome to contribute to our project :heart:
 
@@ -70,17 +70,17 @@ To contribute:
 
 Thank you!
 
-## Testing our latest changes
+## Testing our latest changes.
 
 If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bulma-customize.netlify.com/>.
 
 Our production branch is the `gh-pages` branch which can be seen on <https://mobihack.github.io/bulma-customize/>.
 
-## License
+## License.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## Donation
+## Donation.
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EKLDUBPHHLRE4&source=url)
