@@ -4,7 +4,7 @@
   "description": "Create custom Bulma builds.",
   "private": true,
   "scripts": {
-    "deploy": "gh-pages --dist ./ --src \"{index.html,dist/**}\"",
+    "deploy": "gh-pages --dist ./ --src \"{index.html,dist/**}\" --message \"Updates - `date +'%Y-%m-%d %H:%M:%S'`\"",
     "dev": "webpack-dev-server --open --mode=development --config webpack.config.js",
     "prod": "webpack --mode=production --config webpack.config.js",
     "standard": "standard --parser babel-eslint",
