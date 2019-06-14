@@ -1,24 +1,31 @@
-.js-alert-browser{
-  margin-top: 1.5rem;
+body {
+  font-family: "Open Sans", sans-serif;
 }
-section.group{
-  margin-top: 1.5rem;
+@media screen and (min-width: 768px) {
+  main {
+    margin-top: -5rem !important;
+  }
 }
-
-.submit-section{
+.js-alert-browser {
+  margin-top: 1rem;
+}
+.buttons {
+  justify-content: center;
+}
+.submit-section {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
-.submit-section svg{
+.submit-section svg {
   margin-right: 0.5rem;
 }
 
-.is-active .modal-close-button{
+.is-active .modal-close-button {
   z-index: 100;
 }
-.js-loading-status{
+.js-loading-status {
   margin-top: 1rem;
 }
-.js-dialog-loader .modal-content{
+.js-dialog-loader .modal-content {
   width: 50%;
 }

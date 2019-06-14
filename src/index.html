@@ -7,10 +7,11 @@
   <meta name="description"
     content="Create a custom Bulma v<%= htmlWebpackPlugin.options.bulmaVersion %> build by choosing the components and elements you need.">
   <title>Bulma Customize</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
+<body class="has-background-light">
+  <nav class="navbar is-spaced is-white" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="./">
@@ -30,10 +31,7 @@
           <div class="navbar-item">
             <div class="buttons">
               <a class="button is-primary is-outlined is-radiusless" href="https://github.com/mobihack/bulma-customize">
-                <strong><svg viewBox="0 0 64 64" width="16" height="16">
-                    <path fill="currentColor"
-                      d="M32 0C14 0 0 14 0 32c0 21 19 30 22 30 2 0 2-1 2-2v-5c-7 2-10-2-11-5 0 0 0-1-2-3-1-1-5-3-1-3 3 0 5 4 5 4 3 4 7 3 9 2 0-2 2-4 2-4-8-1-14-4-14-15 0-4 1-7 3-9 0 0-2-4 0-9 0 0 5 0 9 4 3-2 13-2 16 0 4-4 9-4 9-4 2 7 0 9 0 9 2 2 3 5 3 9 0 11-7 14-14 15 1 1 2 3 2 6v8c0 1 0 2 2 2 3 0 22-9 22-30C64 14 50 0 32 0z" />
-                  </svg> <span>View on GitHub</span></strong>
+                <span>View on GitHub</span>
               </a>
             </div>
           </div>
@@ -42,7 +40,7 @@
     </div>
   </nav>
 
-  <div class="hero is-primary">
+  <div class="hero is-primary is-medium">
     <div class="hero-body">
       <div class="container">
 
@@ -54,551 +52,533 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
+  <main class="container">
     <article class="message is-danger js-alert-browser is-hidden">
-      <div class="message-body is-radiusless">
+      <div class="message-body box is-radiusless">
         <h2 class="title is-size-5">Error!</h2>
         <p>Your browser is not up to date, please update your browser or try another one.
-            You can check this website to find a better one: <a href="https://browsehappy.com/">https://browsehappy.com</a></p>
+          You can check this website to find a better one: <a
+            href="https://browsehappy.com/">https://browsehappy.com</a></p>
       </div>
     </article>
-  </div>
 
-  <form class="js-form-customize container">
-
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Utilities <small class="subtitle is-size-5 has-text-grey">(required)</small>
-          </h2>
-        </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button" disabled>
-            Toggle all
-          </button>
-        </div>
-      </nav>
-
-      <hr>
-
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkinitial_variables" name="initial_variables" checked="true"
+    <form class="js-form-customize">
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Utilities <small class="subtitle is-size-5 has-text-grey">(required)</small>
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button"
               disabled>
-            <label for="chkinitial_variables">
-              Initial Variables
-            </label>
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkinitial_variables" name="initial_variables" checked="true"
+                disabled>
+              <label for="chkinitial_variables">
+                Initial Variables
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkfunctions" name="functions" checked="true" disabled>
+              <label for="chkfunctions">
+                Functions
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkderived_variables" name="derived_variables" checked="true"
+                disabled>
+              <label for="chkderived_variables">
+                Derived Variables
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkmixins" name="mixins" checked="true" disabled>
+              <label for="chkmixins">
+                Mixins
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkcontrols" name="controls" checked="true" disabled>
+              <label for="chkcontrols">
+                Controls
+              </label>
+            </div>
           </div>
         </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkfunctions" name="functions" checked="true" disabled>
-            <label for="chkfunctions">
-              Functions
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkderived_variables" name="derived_variables" checked="true"
-              disabled>
-            <label for="chkderived_variables">
-              Derived Variables
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkmixins" name="mixins" checked="true" disabled>
-            <label for="chkmixins">
-              Mixins
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkcontrols" name="controls" checked="true" disabled>
-            <label for="chkcontrols">
-              Controls
-            </label>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Base
-          </h2>
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Base
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkminireset" name="minireset">
+              <label for="chkminireset">
+                Mini Reset
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkgeneric" name="generic">
+              <label for="chkgeneric">
+                Generic
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkhelpers" name="helpers">
+              <label for="chkhelpers">
+                Helpers
+              </label>
+            </div>
+          </div>
         </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
-          </button>
-        </div>
-      </nav>
+      </section>
 
-      <hr>
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Components
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
 
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkminireset" name="minireset">
-            <label for="chkminireset">
-              Mini Reset
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkbreadcrumb" name="breadcrumb">
+              <label for="chkbreadcrumb">
+                Breadcrumb
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkgeneric" name="generic">
-            <label for="chkgeneric">
-              Generic
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkcard" name="card">
+              <label for="chkcard">
+                Card
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkhelpers" name="helpers">
-            <label for="chkhelpers">
-              Helpers
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkdropdown" name="dropdown">
+              <label for="chkdropdown">
+                Dropdown
+              </label>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Components
-          </h2>
-        </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
-          </button>
-        </div>
-      </nav>
-
-      <hr>
-
-      <div class="columns is-multiline">
-
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkbreadcrumb" name="breadcrumb">
-            <label for="chkbreadcrumb">
-              Breadcrumb
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chklevel" name="level">
+              <label for="chklevel">
+                Level
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkcard" name="card">
-            <label for="chkcard">
-              Card
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chklist" name="list">
+              <label for="chklist">
+                List
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkdropdown" name="dropdown">
-            <label for="chkdropdown">
-              Dropdown
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkmedia" name="media">
+              <label for="chkmedia">
+                Media
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chklevel" name="level">
-            <label for="chklevel">
-              Level
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkmenu" name="menu">
+              <label for="chkmenu">
+                Menu
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chklist" name="list">
-            <label for="chklist">
-              List
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkmessage" name="message">
+              <label for="chkmessage">
+                Message
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkmedia" name="media">
-            <label for="chkmedia">
-              Media
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkmodal" name="modal">
+              <label for="chkmodal">
+                Modal
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkmenu" name="menu">
-            <label for="chkmenu">
-              Menu
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chknavbar" name="navbar">
+              <label for="chknavbar">
+                Navbar
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkmessage" name="message">
-            <label for="chkmessage">
-              Message
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkpagination" name="pagination">
+              <label for="chkpagination">
+                Pagination
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkmodal" name="modal">
-            <label for="chkmodal">
-              Modal
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkpanel" name="panel">
+              <label for="chkpanel">
+                Panel
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chknavbar" name="navbar">
-            <label for="chknavbar">
-              Navbar
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chktabs" name="tabs">
+              <label for="chktabs">
+                Tabs
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkpagination" name="pagination">
-            <label for="chkpagination">
-              Pagination
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkpanel" name="panel">
-            <label for="chkpanel">
-              Panel
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chktabs" name="tabs">
-            <label for="chktabs">
-              Tabs
-            </label>
-          </div>
-        </div>
 
 
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Elements
-          </h2>
-        </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
-          </button>
-        </div>
-      </nav>
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Elements
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkbox" name="box">
+              <label for="chkbox">
+                Box
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkbutton" name="button">
+              <label for="chkbutton">
+                Button
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkcontainer" name="container">
+              <label for="chkcontainer">
+                Container
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkcontent" name="content">
+              <label for="chkcontent">
+                Content
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkform" name="form">
+              <label for="chkform">
+                Form
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkicon" name="icon">
+              <label for="chkicon">
+                Icon
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkimage" name="image">
+              <label for="chkimage">
+                Image
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chknotification" name="notification">
+              <label for="chknotification">
+                Notification
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkother" name="other">
+              <label for="chkother">
+                Other
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkprogress" name="progress">
+              <label for="chkprogress">
+                Progress
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chktable" name="table">
+              <label for="chktable">
+                Table
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chktag" name="tag">
+              <label for="chktag">
+                Tag
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chktitle" name="title">
+              <label for="chktitle">
+                Title
+              </label>
+            </div>
+          </div>
 
-      <hr>
-
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkbox" name="box">
-            <label for="chkbox">
-              Box
-            </label>
-          </div>
         </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkbutton" name="button">
-            <label for="chkbutton">
-              Button
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkcontainer" name="container">
-            <label for="chkcontainer">
-              Container
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkcontent" name="content">
-            <label for="chkcontent">
-              Content
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkform" name="form">
-            <label for="chkform">
+      </section>
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
               Form
-            </label>
+            </h2>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkicon" name="icon">
-            <label for="chkicon">
-              Icon
-            </label>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkimage" name="image">
-            <label for="chkimage">
-              Image
-            </label>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkcheckbox_radio" name="checkbox_radio">
+              <label for="chkcheckbox_radio">
+                Checkbox Radio
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chknotification" name="notification">
-            <label for="chknotification">
-              Notification
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkfile" name="file">
+              <label for="chkfile">
+                File
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkother" name="other">
-            <label for="chkother">
-              Other
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkinput_textarea" name="input_textarea">
+              <label for="chkinput_textarea">
+                Input Textarea
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkprogress" name="progress">
-            <label for="chkprogress">
-              Progress
-            </label>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkselect" name="select">
+              <label for="chkselect">
+                Select
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chktable" name="table">
-            <label for="chktable">
-              Table
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chktag" name="tag">
-            <label for="chktag">
-              Tag
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chktitle" name="title">
-            <label for="chktitle">
-              Title
-            </label>
-          </div>
-        </div>
 
-      </div>
-    </section>
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Form
-          </h2>
         </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
+      </section>
+
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Grid
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chktiles" name="tiles">
+              <label for="chktiles">
+                Tiles
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkcolumns" name="columns">
+              <label for="chkcolumns">
+                Columns
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Layout
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkfooter" name="footer">
+              <label for="chkfooter">
+                Footer
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chkhero" name="hero">
+              <label for="chkhero">
+                Hero
+              </label>
+            </div>
+          </div>
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input class="checkbox" type="checkbox" id="chksection" name="section">
+              <label for="chksection">
+                Section
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="group box is-radiusless">
+        <nav class="level">
+          <div class="level-left">
+            <h2 class="title is-size-3 has-text-grey-dark">
+              Options
+            </h2>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+              Toggle all
+            </button>
+          </div>
+        </nav>
+        <hr>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <div class="control">
+              <input id="chkMinify" type="checkbox" checked>
+              <label for="chkMinify">
+                Minify
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="submit-section has-text-centered">
+        <div class="buttons are-medium">
+          <button type="reset" class="button is-white">
+            <span>Reset</span>
+          </button>
+          <button type="submit" class="button is-primary js-btn-customize">
+            <span>Build</span>
           </button>
         </div>
-      </nav>
-
-      <hr>
-
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkcheckbox_radio" name="checkbox_radio">
-            <label for="chkcheckbox_radio">
-              Checkbox Radio
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkfile" name="file">
-            <label for="chkfile">
-              File
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkinput_textarea" name="input_textarea">
-            <label for="chkinput_textarea">
-              Input Textarea
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkselect" name="select">
-            <label for="chkselect">
-              Select
-            </label>
-          </div>
-        </div>
-
       </div>
-    </section>
-
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Grid
-          </h2>
-        </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
-          </button>
-        </div>
-      </nav>
-
-      <hr>
-
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chktiles" name="tiles">
-            <label for="chktiles">
-              Tiles
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkcolumns" name="columns">
-            <label for="chkcolumns">
-              Columns
-            </label>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Layout
-          </h2>
-        </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
-          </button>
-        </div>
-      </nav>
-
-      <hr>
-
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkfooter" name="footer">
-            <label for="chkfooter">
-              Footer
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chkhero" name="hero">
-            <label for="chkhero">
-              Hero
-            </label>
-          </div>
-        </div>
-        <div class="column is-3">
-          <div class="control">
-            <input class="checkbox" type="checkbox" id="chksection" name="section">
-            <label for="chksection">
-              Section
-            </label>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="group box is-radiusless">
-      <nav class="level">
-        <div class="level-left">
-          <h2 class="title is-size-3 has-text-grey-dark">
-            Options
-          </h2>
-        </div>
-        <div class="level-right">
-          <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
-            Toggle all
-          </button>
-        </div>
-      </nav>
-
-      <hr>
-
-      <div class="columns is-multiline">
-        <div class="column is-3">
-          <div class="control">
-            <input id="chkMinify" type="checkbox" checked>
-            <label for="chkMinify">
-              Minify
-            </label>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="submit-section has-text-centered">
-      <button type="submit" class="button is-primary is-large js-btn-customize">
-        <svg class="icon-build" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor"
-          stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-          <path
-            d="M13 2v4l-2 1-3-3-4 4 3 3-1 2H2v6h4l1 2-3 3 4 4 3-3 2 1v4h6v-4l2-1 3 3 4-4-3-3 1-2h4v-6h-4l-1-2 3-3-4-4-3 3-2-1V2z" />
-          <circle cx="16" cy="16" r="4" />
-        </svg>
-        <span>Build</span>
-      </button>
-    </div>
-  </form>
-
+    </form>
+  </main>
   <footer class="footer">
     <div class="content has-text-centered">
       <p>Made with
