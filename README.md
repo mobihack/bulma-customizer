@@ -3,7 +3,9 @@
 [![Build Status](https://img.shields.io/travis/mobihack/bulma-customize/master.svg?label=Build%20Status)](https://travis-ci.org/mobihack/bulma-customize)
 [![dependencies Status](https://img.shields.io/david/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize)
 [![devDependencies Status](https://img.shields.io/david/dev/mobihack/bulma-customize.svg)](https://david-dm.org/mobihack/bulma-customize?type=dev)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/) ![GitHub](https://img.shields.io/github/license/mobihack/bulma-customize.svg)
+
+![Yo](https://repository-images.githubusercontent.com/191608084/7deb6080-8ea0-11e9-9414-f42db4d5f7c8)
 
 > build custom versions of bulma framework.
 
