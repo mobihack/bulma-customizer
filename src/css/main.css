@@ -1,6 +1,9 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+main {
+  margin-top: 1.5rem !important;
+}
 @media screen and (min-width: 768px) {
   main {
     margin-top: -5rem !important;
@@ -12,13 +15,6 @@ body {
 .buttons {
   justify-content: center;
 }
-.submit-section {
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
-}
-.submit-section svg {
-  margin-right: 0.5rem;
-}
 
 .is-active .modal-close-button {
   z-index: 100;
@@ -27,5 +23,13 @@ body {
   margin-top: 1rem;
 }
 .js-dialog-loader .modal-content {
-  width: 50%;
+  width: 30rem;
 }
+@media screen and (max-width: 1024px) {
+  .container.is-fluid-mobile {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: none;
+  }
+}
+body.is-debug * { outline: solid 1px rgba(255,0,0,0.5); }

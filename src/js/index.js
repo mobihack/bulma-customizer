@@ -5,7 +5,7 @@ import { createModal, showModal, updateLink } from './dialog-loader'
 import { initToggler } from './toggler'
 import { bulmaVersion } from './config'
 
-import 'bulma/css/bulma.css'
+import 'bulma/css/bulma.min.css'
 import '../css/main.css'
 
 window.onload = () => {

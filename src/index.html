@@ -8,6 +8,8 @@
     content="Create a custom Bulma v<%= htmlWebpackPlugin.options.bulmaVersion %> build by choosing the components and elements you need.">
   <title>Bulma Customize</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 </head>
 
 <body class="has-background-light">
@@ -30,7 +32,8 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary is-outlined is-radiusless" href="https://github.com/mobihack/bulma-customize">
+              <a class="button is-primary is-outlined" href="https://github.com/mobihack/bulma-customize">
+                <span class="icon"><i class="fa fa-github" aria-hidden="true"></i></span>
                 <span>View on GitHub</span>
               </a>
             </div>
@@ -52,10 +55,11 @@
       </div>
     </div>
   </div>
-  <main class="container">
+  <main class="container is-fluid-mobile">
     <article class="message is-danger js-alert-browser is-hidden">
-      <div class="message-body box is-radiusless">
-        <h2 class="title is-size-5">Error!</h2>
+      <div class="message-body box">
+        <h2 class="title is-size-3">Error!</h2>
+        <hr>
         <p>Your browser is not up to date, please update your browser or try another one.
           You can check this website to find a better one: <a
             href="https://browsehappy.com/">https://browsehappy.com</a></p>
@@ -64,15 +68,14 @@
 
     <form class="js-form-customize">
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Utilities <small class="subtitle is-size-5 has-text-grey">(required)</small>
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button"
-              disabled>
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button" disabled>
               Toggle all
             </button>
           </div>
@@ -125,14 +128,14 @@
       </section>
 
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Base
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -167,14 +170,14 @@
       </section>
 
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Components
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -292,14 +295,14 @@
       </section>
 
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Elements
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -414,14 +417,14 @@
         </div>
       </section>
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Form
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -465,14 +468,14 @@
       </section>
 
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Grid
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -500,14 +503,14 @@
       </section>
 
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Layout
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -543,14 +546,14 @@
       </section>
 
       <section class="group box is-radiusless">
-        <nav class="level">
+        <nav class="level has-text-centered-mobile">
           <div class="level-left">
             <h2 class="title is-size-3 has-text-grey-dark">
               Options
             </h2>
           </div>
           <div class="level-right">
-            <button class="button is-primary is-outlined is-small toggle-all-button is-radiusless" type="button">
+            <button class="button is-primary is-outlined is-small toggle-all-button" type="button">
               Toggle all
             </button>
           </div>
@@ -567,26 +570,31 @@
           </div>
         </div>
       </section>
-      <div class="submit-section has-text-centered">
+      <div class="section has-text-centered">
         <div class="buttons are-medium">
           <button type="reset" class="button is-white">
             <span>Reset</span>
           </button>
           <button type="submit" class="button is-primary js-btn-customize">
+            <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
             <span>Build</span>
           </button>
         </div>
       </div>
     </form>
   </main>
+
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>Made with
-        <svg class="has-text-danger" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor"
-          stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-          <path d="M4 16C1 12 2 6 7 4s8 2 9 4c1-2 5-6 10-4s5 8 2 12-12 12-12 12-9-8-12-12z" />
-        </svg> by <a href="https://github.com/Johann-S">Johann-S</a>
-        &amp; <a href="https://github.com/mobihack">mobihack</a>.
+
+      <span class="is-size-4">Bulma Customize</span>
+      <br>
+      <p>A fork of <a href="https://github.com/Johann-S/bs-customizer">bs-customizer</a>, originally created by <a
+          href="https://github.com/Johann-S">Johann-S</a>.
+      </p>
+      <p>made with
+        <span class="icon has-text-danger" onclick="document.body.classList.toggle('is-debug')"><i class="fa fa-heart-o" aria-hidden="true"></i></span> by <a
+          href="https://github.com/mobihack">mobihack</a>.
       </p>
     </div>
   </footer>
