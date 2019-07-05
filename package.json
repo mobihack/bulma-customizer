@@ -29,7 +29,7 @@
     "uglifyjs-browser": "^3.0.0"
   },
   "devDependencies": {
-    "acorn": "^6.1.1",
+    "acorn": "^6.2.0",
     "@babel/core": "^7.1.6",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
