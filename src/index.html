@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description"
-    content="Create a custom Bulma v<%= htmlWebpackPlugin.options.bulmaVersion %> build by choosing the components and elements you need.">
+    content="Create a custom Bulma v<%= htmlWebpackPlugin.options.bulmaVersion %> build by choosing the components and elements you need. You can select the features you want and remove the rest. Create minimal package.">
   <title>Bulma Customize</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
@@ -17,7 +17,7 @@
   <meta property="og:title" content="Bulma Customize" />
   <meta property="og:url" content="https://mobihack.github.io/bulma-customize/" />
   <meta property="og:description"
-    content="A simple customizer which allows you to build a custom version of Bulma. - mobihack/bulma-customize" />
+    content="Create a custom Bulma v<%= htmlWebpackPlugin.options.bulmaVersion %> build by choosing the components and elements you need. You can select the features you want and remove the rest. Create minimal package." />
 </head>
 
 <body class="has-background-light">
@@ -55,11 +55,8 @@
     <div class="hero-body">
       <div class="container">
 
-        <h5 class="title is-2">Customize and Download</h5>
-        <p class="subtitle is-5">Create a custom <a href="https://bulma.io/" title="Bulma website">Bulma</a>
-          v<%= htmlWebpackPlugin.options.bulmaVersion %> build
-          by choosing the components and elements you need.
-        </p>
+        <h1 class="title is-2">Bulma Customize and Download</h1>
+        <p class="subtitle is-5">Create a custom <a href="https://bulma.io/" title="Bulma website">Bulma</a> v<%= htmlWebpackPlugin.options.bulmaVersion %> build by choosing the components and elements you need.</p>
       </div>
     </div>
   </div>
@@ -68,9 +65,8 @@
       <div class="message-body box">
         <h2 class="title is-size-3">Error!</h2>
         <hr>
-        <p>Your browser is not up to date, please update your browser or try another one.
-          You can check this website to find a better one: <a
-            href="https://browsehappy.com/">https://browsehappy.com</a></p>
+        <p>Your browser is not up to date, please update your browser or try another one. You can check this website to
+          find a better one: <a href="https://browsehappy.com/">https://browsehappy.com</a></p>
       </div>
     </article>
 
@@ -351,14 +347,6 @@
           </div>
           <div class="column is-3-desktop is-4-tablet is-6-mobile">
             <div class="control">
-              <input class="checkbox" type="checkbox" id="chkform" name="form">
-              <label for="chkform">
-                Form
-              </label>
-            </div>
-          </div>
-          <div class="column is-3-desktop is-4-tablet is-6-mobile">
-            <div class="control">
               <input class="checkbox" type="checkbox" id="chkicon" name="icon">
               <label for="chkicon">
                 Icon
@@ -597,13 +585,8 @@
 
       <span class="is-size-4">Bulma Customize</span>
       <br>
-      <p>A fork of <a href="https://github.com/Johann-S/bs-customizer">bs-customizer</a>, originally created by <a
-          href="https://github.com/Johann-S">Johann-S</a>.
-      </p>
-      <p>made with
-        <span class="icon has-text-danger" onclick="document.body.classList.toggle('is-debug')"><i class="fa fa-heart-o"
-            aria-hidden="true"></i></span> by <a href="https://github.com/mobihack">mobihack</a>.
-      </p>
+      <p>A fork of <a href="https://github.com/Johann-S/bs-customizer">bs-customizer</a>, originally created by <a href="https://github.com/Johann-S">Johann-S</a>.</p>
+      <p>made with <span class="icon has-text-danger" onclick="document.body.classList.toggle('is-debug')"><i class="fa fa-heart-o" aria-hidden="true"></i></span> by <a href="https://github.com/mobihack">mobihack</a>.</p>
     </div>
   </footer>
 </body>

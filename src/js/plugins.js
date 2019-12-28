@@ -65,9 +65,6 @@ const scssPlugins = {
   content: [
     `${bsScssCDN}elements/content.sass`
   ],
-  form: [
-    `${bsScssCDN}elements/form.sass`
-  ],
   icon: [
     `${bsScssCDN}elements/icon.sass`
   ],
@@ -95,24 +92,24 @@ const scssPlugins = {
 
   /** form */
   checkbox_radio: [
-    `${bsScssCDN}form/checkbox-radio.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`
+    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/checkbox-radio.sass`
   ],
-  file: [
-    `${bsScssCDN}form/file.sass`,
+  file: [    
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`
+    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/file.sass`
   ],
   input_textarea: [
-    `${bsScssCDN}form/input-textarea.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`
+    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/input-textarea.sass`
   ],
   select: [
-    `${bsScssCDN}form/select.sass`,
     `${bsScssCDN}form/shared.sass`,
-    `${bsScssCDN}form/tools.sass`
+    `${bsScssCDN}form/tools.sass`,
+    `${bsScssCDN}form/select.sass`
   ],
 
   /** grid */

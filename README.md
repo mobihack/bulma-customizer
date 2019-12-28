@@ -62,13 +62,13 @@ Please view the project to-do list at the projects section.
 ## Branches
 
 There are currently three branches for this project.
- - master - Here our main source code is present.
+ - master - Here the main source code is present.
  - gh-pages - Here the `production` files that was compiled is present.
  - bs-customize - This branch is used as a merge branch only for upstream pull request.
 
 ## Contributing
 
-You're more than welcome to contribute to our project :heart:
+You're more than welcome to contribute to the project :heart:
 
 To contribute:
 
@@ -83,11 +83,11 @@ To contribute:
 
 Thank you!
 
-## Testing our latest changes
+## Testing the latest changes
 
-If you want to try out our latest changes (pushed in our `master` branch) you can see them in <https://bulma-customize.netlify.com/>.
+If you want to try out the latest changes (pushed in the `master` branch) you can see them in <https://bulma-customize.netlify.com/>.
 
-Our production branch is the `gh-pages` branch which can be seen at <https://mobihack.github.io/bulma-customize/>.
+The production branch is the `gh-pages` branch which can be seen at <https://mobihack.github.io/bulma-customize/>.
 
 ## License
 

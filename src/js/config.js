@@ -1,4 +1,4 @@
-const bulmaVersion = '0.7.5'
+const bulmaVersion = '0.8.0'
 const bsScssCDN = `https://unpkg.com/bulma@${bulmaVersion}/sass/`
 
 module.exports = Object.freeze({
